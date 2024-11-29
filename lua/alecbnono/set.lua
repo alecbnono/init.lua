@@ -40,6 +40,14 @@ vim.opt.scrolloff = 8
 -- Sets the terminal (Powershell 7)
 vim.opt.shell = 'pwsh.exe'
 
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
+
+vim.opt.termguicolors = true
+
+vim.opt.colorcolumn = "80"
+
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
     local ft = args.match
