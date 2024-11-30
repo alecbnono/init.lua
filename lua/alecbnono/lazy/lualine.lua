@@ -3,6 +3,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 
 	require("lualine").setup({
-		options = { theme = "horizon" },
+		options = { theme = custom_gruvbox },
 	}),
 }
