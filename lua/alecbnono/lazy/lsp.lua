@@ -195,7 +195,31 @@ return {
 				cssls = {},
 				jsonls = {},
 				ts_ls = {},
-				emmet_ls = {},
+				emmet_ls = {
+					capabilities = capabilities,
+					filetypes = {
+						"css",
+						"eruby",
+						"html",
+						"javascript",
+						"javascriptreact",
+						"less",
+						"sass",
+						"scss",
+						"svelte",
+						"pug",
+						"typescriptreact",
+						"vue",
+					},
+					init_options = {
+						html = {
+							options = {
+								-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+								["bem.enabled"] = true,
+							},
+						},
+					},
+				},
 				jdtls = {},
 				lua_ls = {
 					-- cmd = {...},
@@ -227,6 +251,7 @@ return {
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format Lua code
 				"prettier",
+				"prettierd",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
