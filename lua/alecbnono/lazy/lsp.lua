@@ -31,6 +31,20 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
+					local ft = args.match
+					local indent = {
+						html = 2,
+						c = 8,
+					}
+
+					local size = indent[ft] or 4 -- Default to 4 spaces if language not listed
+					vim.bo.tabstop = size
+					vim.bo.shiftwidth = size
+					vim.bo.expandtab = true -- Use spaces instead of tabs
+				end,
+			})
 			-- Brief aside: **What is LSP?**
 			--
 			-- LSP is an initialism you've probably heard, but might not understand what it is.
@@ -191,13 +205,7 @@ return {
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
-				html = {
-					format = {
-						indentSize = 2,
-						tabSize = 2,
-						insertSpaces = true,
-					},
-				},
+				html = {},
 				cssls = {},
 				jsonls = {},
 				ts_ls = {},

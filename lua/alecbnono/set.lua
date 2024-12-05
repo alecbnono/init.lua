@@ -1,9 +1,9 @@
 vim.opt.relativenumber = true
 vim.opt.number = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 vim.opt.breakindent = true
 
@@ -12,7 +12,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -26,10 +26,10 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -38,25 +38,10 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
 -- Sets the terminal (Powershell 7)
-vim.opt.shell = 'pwsh.exe'
+vim.opt.shell = "pwsh.exe"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
 
 vim.opt.termguicolors = true
-
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function(args)
-    local ft = args.match
-    local indent = {
-      html = 2,
-      c = 8,
-    }
-
-    local size = indent[ft] or 4 -- Default to 4 spaces if language not listed
-    vim.bo.tabstop = size
-    vim.bo.shiftwidth = size
-    vim.bo.expandtab = true -- Use spaces instead of tabs
-  end,
-})
