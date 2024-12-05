@@ -191,7 +191,13 @@ return {
 				--    https://github.com/pmizio/typescript-tools.nvim
 				--
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
-				html = {},
+				html = {
+					format = {
+						indentSize = 2,
+						tabSize = 2,
+						insertSpaces = true,
+					},
+				},
 				cssls = {},
 				jsonls = {},
 				ts_ls = {},
