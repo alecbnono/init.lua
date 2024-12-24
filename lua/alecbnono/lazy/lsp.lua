@@ -36,6 +36,7 @@ return {
 					local ft = args.match
 					local indent = {
 						html = 2,
+						css = 2,
 						c = 8,
 					}
 
