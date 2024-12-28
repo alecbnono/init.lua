@@ -38,7 +38,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
 -- Sets the terminal (Powershell 7)
-vim.opt.shell = "pwsh.exe"
+vim.opt.shell = "/usr/bin/zsh"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
