@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+
 vim.opt.relativenumber = true
 vim.opt.number = true
 vim.opt.mouse = "a"
@@ -37,11 +39,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 8
 
--- Sets the terminal (Powershell 7)
+-- Sets the terminal (zsh)
 vim.opt.shell = "/usr/bin/zsh"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
-
-vim.opt.termguicolors = true
